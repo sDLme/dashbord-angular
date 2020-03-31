@@ -1,3 +1,8 @@
 <div class="container my-5 mx-auto">
-  <app-chart></app-chart>
+  <div class="row">
+    <app-chart *ngFor="let temp of tempObj" class="col-6"
+               [tempValue]="temp.temp"
+               [tempLabel]="temp.name">
+    </app-chart>
+  </div>
 </div>
