@@ -10,13 +10,15 @@ export class ChartComponent {
 
   @Input() tempValue: number;
   @Input() tempLabel: string;
+  @Input() temp: string;
   canvasWidth = 500;
   options = {
+    arcLabels: [ '20', '40', '60', '80'],
     hasNeedle: true,
     needleUpdateSpeed: 1000,
     needleStartValue: 50,
-    arcColors: ["rgb(255,84,84)","rgb(239,214,19)","rgb(61,204,91)"],
-    arcDelimiters: [40,60],
+    arcColors: ['rgb(104, 237, 43)', 'rgb(195, 237, 43)', 'rgb(237, 205, 43)', 'rgb(237, 159, 43)', 'rgb(237, 62, 43)'],
+    arcDelimiters: [20, 40, 60, 80],
     rangeLabel: ['0', '100'],
   };
 }

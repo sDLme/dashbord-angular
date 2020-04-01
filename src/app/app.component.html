@@ -1,8 +1,10 @@
 <div class="container my-5 mx-auto">
+  <h1 class="text-center my-5">{{title}}</h1>
   <div class="row">
-    <app-chart *ngFor="let temp of tempObj" class="col-6"
+    <app-chart *ngFor="let temp of tempObj" class="col-6 my-3 border-bottom"
                [tempValue]="temp.temp"
-               [tempLabel]="temp.name">
+               [tempLabel]="temp.temp"
+               [temp]="temp.name">
     </app-chart>
   </div>
 </div>
