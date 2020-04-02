@@ -126,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "power-chart"
+    }
+  },
+  "defaultProject": "power-chart",
+  "cli": {
+    "analytics": false
+  }
 }
