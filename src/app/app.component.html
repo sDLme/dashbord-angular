@@ -1,10 +1,50 @@
 <div class="container my-5 mx-auto">
   <h1 class="text-center my-5">{{title}}</h1>
-  <div class="row">
-    <app-chart *ngFor="let temp of tempObj" class="col-6 my-3 border-bottom"
+  <div class="row border-bottom">
+    <app-chart *ngFor="let temp of tempObj" class="col-lg-3 col-md-6 col-xs-12 my-3"
                [tempValue]="temp.temp"
-               [tempLabel]="temp.temp"
-               [temp]="temp.name">
+               [tempLabel]="temp.temp + ' °C'"
+               [temp]="temp.name | titlecase">
+    </app-chart>
+  </div>
+  <div class="row">
+    <h1 class="text-center my-5 mx-auto">Electricity info</h1>
+  </div>
+  <div class="row border-bottom">
+    <app-chart  class="col-lg-3 col-md-6 col-xs-12 my-3 "
+               [min] = "200"
+               [max] = "260"
+               [tempValue]="powerObj.voltage"
+               [tempLabel]=" powerObj.voltage + ' V'"
+               temp ="Voltage">
+    </app-chart>
+    <app-chart  class="col-lg-3 col-md-6 col-xs-12 my-3 "
+                [min] = "0"
+                [max] = "50"
+                [tempValue]="powerObj.current | number"
+                [tempLabel]=" (powerObj.current | number) + ' A'"
+                temp ="Current">
+    </app-chart>
+    <app-chart  class="col-lg-3 col-md-6 col-xs-12 my-3 "
+                [min] = "0"
+                [max] = "20"
+                [tempValue]="(powerObj.power / 1000) | number "
+                [tempLabel]=" ((powerObj.power / 1000) | number) + ' Kwh'"
+                temp ="Power">
+    </app-chart>
+    <app-chart  class="col-lg-3  col-md-6 col-xs-12 my-3 "
+                [min] = "0"
+                [max] = "300"
+                [tempValue]="powerObj.energy "
+                [tempLabel]=" powerObj.energy + ' Kw'"
+                temp ="Energy">
+    </app-chart>
+    <app-chart  class="col-lg-3 col-md-6 col-xs-12 my-3 "
+                [min] = "40"
+                [max] = "60"
+                [tempValue]="powerObj.frequency "
+                [tempLabel]=" powerObj.frequency + ' Hz'"
+                temp ="Frequency">
     </app-chart>
   </div>
 </div>
